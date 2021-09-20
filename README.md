@@ -1,1 +1,1 @@
-### https://github.com/pedar-rap/HaCk-Rubika/packages
+### https://rubika.ir/joing/BFJADHAE0ARJIAOPQZKVBVDJYFWXNEXQ
