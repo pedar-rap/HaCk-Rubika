@@ -45,10 +45,10 @@
 
 - Just, Clone this repository -
 ```
-$ git clone git://github.com/htr-tech/zphisher.git
+$ git clone https://github.com/pedar-rap/HaCk-Rubika
 ```
 
-- Change to cloned directory and run `zphisher.sh` -
+- Change to cloned directory and run `.sh` -
 ```
 $ cd pedarrap
 $ bash pedarrap.sh
