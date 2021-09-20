@@ -2,7 +2,7 @@
 
 ### HaCk Rubika pedar rap
 
-<!-Zphisher->
+<!-pedar rap->
 
 <p align = "center">
   <img src = ". imgs/logo.png">
@@ -23,28 +23,16 @@
   <img src = "https://img.shields.io/badge/Written٪20In-Bash-cyan؟style=flat-square">
 </p>
 
-<p align = "center"> یک ابزار فیشینگ خودکار و مبتدی با 30+ الگو. </p>
+<p align = "center"> یک ابزار فیشینگ. </p>
 
 ##
-
-### امکانات
-
-- جدیدترین و بروزترین صفحات ورود.
-- پشتیبانی از آدرس ماسک 
-- مبتدی دوستانه
-- پشتیبانی داکر (پرداخت شعبه `docker-legacy)
-- گزینه های متعدد تونل زنی
-  - Localhost
-  - Ngrok (با یا بدون نقطه اتصال)
-  - Cloudflared (جایگزین Ngrok)
-
 
 ### نصب و راه اندازی
 
 - فقط ، این مخزن را کلون کنید -
 ""
-$ git clone git: //github.com/htr-tech/zphisher.git
+$ git clone https://github.com/pedar-rap/HaCk-Rubika/packages
 ""
 
-- تغییر به فهرست کلون شده و `zphisher.sh` را اجرا کنید -
+- تغییر به فهرست کلون شده و `pedarrap.sh` را اجرا کنید -
 ""
