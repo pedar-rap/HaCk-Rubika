@@ -33,7 +33,7 @@
 
 ## Single Command :
 ```
-apt update ; apt install git -y ; git clone git://github.com/htr-tech/nexphisher.git ; cd nexphisher ; bash setup ; bash nexphisher
+apt update ; apt install git -y ; git clone  ; cd nexphisher ; bash setup ; bash nexphisher
 ```
 <br>
 <p align="center">
@@ -41,17 +41,6 @@ apt update ; apt install git -y ; git clone git://github.com/htr-tech/nexphisher
 <img width="46%" src="https://raw.githubusercontent.com/htr-tech/release-download/master/images/nexphisher2.png"/>
 
 ### <<< If you copy , Then Give me The Credits >>>
-
-## Features :
-#### [+] Latest Login Pages !
-#### [+] 5 Port Forwarding Options !
-#### [+] Easy for Beginners !
-
-## Credits :
-#### > Zphisher (https://github.com/htr-tech/zphisher)
-#### > The Linux Choice (https://github.com/thelinuxchoice)
-#### > DarkSecDevelopers (https://github.com/DarkSecDevelopers)
-#### > Undeadsec (https://github.com/Undeadsec)
 
 ## Tunelling Options :
 #### > Localhost (127.0.0.1)
