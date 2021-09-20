@@ -2,9 +2,6 @@
 
 ### https://rubika.ir/Hacking_tools
 
-### ....بزودی
+### * ....بزودی
  
-* git clone https://github.com/pedar-rap/HaCk-Rubika
-
-* cd pedarrap 
 
