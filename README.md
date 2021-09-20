@@ -4,4 +4,7 @@
 
 ### ....بزودی
  
-* ! [تصویر Yaktocat] (https://octodex.github.com/images/yaktocat.png) *
+* git clone https://github.com/pedar-rap/HaCk-Rubika
+
+* cd pedarrap 
+
