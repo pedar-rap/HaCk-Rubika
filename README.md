@@ -1,3 +1,3 @@
 < HaCk Rubika >
 
-###HaCk Rubika
+### نصب و راه اندازی
