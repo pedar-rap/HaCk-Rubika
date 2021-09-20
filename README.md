@@ -1,1 +1,1 @@
-<HaCk Rubika>
+< HaCk Rubika >
